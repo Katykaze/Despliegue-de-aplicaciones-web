@@ -3,6 +3,7 @@
 <BODY>
 <?php
 $ip="192.168.16.100/16";
+ $copiaIP=$ip;
 $bitsTotales= 32;
 //longitud de la ip para recortar la máscara de red
 $longitud = strlen($ip);
@@ -75,7 +76,7 @@ $direccionRedBroad = "La direccion de broadcast en decimal es $primerOctalB.$seg
 //echo "$direccionRedBroad<br/><br/>";
 
 //resumen
-echo "$ip <br/><br/><br/>";
+echo "la ip inicial es  $copiaIP <br/><br/>";
 echo "La mascara de red es $mascaraRed <br/><br/>";
 echo "$direccionRedDecimal<br/><br/>";
 echo "$direccionRedBroad<br/><br/>";
