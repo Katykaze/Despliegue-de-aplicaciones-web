@@ -1,7 +1,7 @@
 <HTML>
 
 <HEAD>
-    <TITLE> ej1ARRAYIMPARES.php </TITLE>
+    <TITLE> EJ1-Conversion IP Decimal a Binario </TITLE>
 </HEAD>
 
 <BODY>
@@ -11,27 +11,24 @@
     echo "Indice";
     echo "Valor";
     echo "Suma";
+    $valor=1;
     $numerosImpares = [];
     $contadorImpares = 0;
-    //hasta 40 porque por cada dos numeros hay uno impar, si necesitamos 20, será el doble -->40
-    for ($i = 1; $i <= 40; $i++) {
-        if ($i % 2 != 0) {
-            echo "<tr>";
-            echo "<td>&nbsp;" . $contadorImpares . "&nbsp;</td>";
-            echo "<td>&nbsp" . $numerosImpares[] = $i . "&nbsp;</td>";
-            echo "<td>&nbsp" . ($i+$contadorImpares). "&nbsp;</td>";
+    $suma=0;
+    do{
+            echo "<tr>"; 
+            if($valor % 2 !=0){
+                echo "<td>&nbsp;" . $contadorImpares . "&nbsp;</td>";
+                $suma=$valor+$suma;
+                echo "<td>&nbsp" . $numerosImpares[] = $valor. "&nbsp;</td>";
+                echo "<td>&nbsp" . $suma. "&nbsp;</td>";
+                $contadorImpares++;
+            }  
+            $valor++;
             echo "</tr>";
-            $contadorImpares++;
             //colocamos al final el contador para que se incremente una vez ha pasado toda la impresiòn.
             //es necesario realizarlo de esta manera para que empiece de cero y no se incremente en la suma total
-            //si lo incrementamos arriba, la primera suma daria 0+1=2
-        }
-    }
+            //si lo incrementamos arriba, la primera suma daria 0+1=2    
+    }while($contadorImpares<20);
     echo "</table>";
     var_dump($numerosImpares);//nos da informacion muy completa sobre la variable
-
-
-    ?>
-</BODY>
-
-</HTML>
