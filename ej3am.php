@@ -17,8 +17,8 @@
         for ($j = 0; $j < 3; $j++) {
             $n2++;
             $numeroF = "($n1 , $n2)";
-            echo $matriz[$j][$i] = $numeroF;
-            
+            echo $matriz[$i][$j] = $numeroF;
+
             echo " ";
         }
         //$numeroC="($n1 , $n2)";
