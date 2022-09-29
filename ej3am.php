@@ -7,36 +7,37 @@
 <BODY>
     <?php
 
-    $n1 = 0;
-    $n2 = 0;
-    $numeroF;
-    $numeroC;
-    for ($i = 0; $i < 5; $i++) {
-        $n1++;
-        $n2 = 0;
-        for ($j = 0; $j < 3; $j++) {
-            $n2++;
-            $numeroF = "($n1 , $n2)";
-            echo $matriz[$i][$j] = $numeroF;
-
-            echo " ";
+    $fila = 3;
+    $columna = 5;
+    $contadorNumero=0;
+    $matriz=[];
+    $bidimensional=[];
+//imprimimos por fila----------------------------------------------
+    for ($i = 0; $i < $fila ; $i++) {
+        //$matriz = [];
+        for ($j = 0; $j < $columna ; $j++) {
+            $contadorNumero+=2;
+            $matriz[]=$contadorNumero;
+            printf("(" . $i . "," . $j . ") ");
         }
-        //$numeroC="($n1 , $n2)";
-        echo "<br>";
+        $bidimensional[]=$matriz;  
     }
-    $txt = '<table border>';
-    //----------------imprimiendo en tabla---------------------
-    print_r($matriz);
-  
+    printf("<br>");
+    printf("<br>");
+    //-----------------imprimir por columnas------------------
+    for($j=0;$j<$columna;$j++){
+        for($i=0;$i< $fila;$i++){
+            printf("(" . $i . "," . $j . ") ");
+
+        }
+
+    }
+    printf("<br>");
+    //en este array bidimensional almacena por cada array la cantidad de numeros , por filas 
+    print_r($bidimensional);
 
 
-    //  foreach($matriz as $x){
-    //      $txt.='<tr>';
-    //      foreach($x as $xy) $txt.='<td>'.$xy.'</td>';
-    //       $txt.='</tr>';
-    //   }
-    //   $txt.='</table>';
-    //   echo $txt;
+
 
     ?>
 </BODY>
