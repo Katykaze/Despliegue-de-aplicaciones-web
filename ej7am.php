@@ -32,23 +32,26 @@
         'Oscar' => array('Programacion' => 6, 'Bases de Datos' => 7, 'FOL' => 6, 'Lenguaje de Marcas' => 5),
         'Laura' => array('Programacion' => 6, 'Bases de Datos' => 8, 'FOL' => 6, 'Lenguaje de Marcas' => 7)
     );
-
+//------------variables auxiliares para almacenar los ejemplos
+$asignatura1='Programacion';
+$asignatura2='Bases de Datos';
+$alumnoEj='Roberto';
     foreach ($alumnos as $clave => $valor) {
         foreach ($valor as $clave2 => $valor2) {
             //echo $clave2 . " Nota " . $valor2;
-            if ($clave2 == 'Programacion' && $valor2 > $programacionNota) {
+            if ($clave2 == $asignatura1  && $valor2 > $programacionNota) {
                 $programacionNota = $valor2;
                 $alumno = $clave;
             }
-            if ($clave2 == 'Bases de Datos' && $valor2 < $baseDatosNota) {
+            if ($clave2 == $asignatura2  && $valor2 < $baseDatosNota) {
                 $baseDatosNota = $valor2;
-                $alumno2 = $clave2;
+                $alumno2 = $clave;
             }
-            if ($clave == 'Roberto' && $valor2 < $notaBaja) {
+            if ($clave == $alumnoEj && $valor2 < $notaBaja) {
                 $notaBaja = $valor2;
                 $asignaturaBaja = $clave2;
             }
-            if ($clave == 'Roberto' && $valor2 > $notaAlta) {
+            if ($clave == $alumnoEj && $valor2 > $notaAlta) {
                 $notaAlta = $valor2;
                 $asignaturaAlta = $clave2;
             }
@@ -56,17 +59,17 @@
     }
     //---------------------Mostrar por pantalla el alumno con mayor nota en una asignatura determinada.
     //elegimos asignatura de programacion
-    echo "El alumno/a con mejor nota en Programacion ha sido " . $alumno . " y su nota es  " . $programacionNota;
+    echo "El alumno/a con mejor nota en ".$asignatura1. " ha sido " . $alumno . " y su nota es  " . $programacionNota;
     echo "</br>";
     //---------------------Mostrar por pantalla el alumno con menor nota en una asignatura determinada.
-    echo "El alumno/a con menor nota en Base de datos ha sido " . $alumno2 . " y su nota es  " . $baseDatosNota;
+    echo "El alumno/a con menor nota en " . $asignatura2 ." ha sido " . $alumno2 . " y su nota es  " . $baseDatosNota;
     echo "</br>";
     //-------Para un alumno, mostrar en que materia tiene su nota más baja.
     //elegimos a Roberto
-    echo "El alumno Roberto en la asignatura " . $asignaturaBaja . " tiene  una nota de " . $notaBaja . " y es su nota más baja";
+    echo "El alumno ".$alumnoEj." en la asignatura " . $asignaturaBaja . " tiene  una nota de " . $notaBaja . " y es su nota más baja";
     echo "</br>";
     //Para un alumno, mostrar en que materia tiene su nota más alta.
-    echo "El alumno Roberto en la asignatura " . $asignaturaAlta . " tiene una nota de " . $notaAlta . " y es su nota más alta";
+    echo "El alumno " .$alumnoEj. " en la asignatura " . $asignaturaAlta . " tiene una nota de " . $notaAlta . " y es su nota más alta";
     //Mostrar la media por materia de todos los alumnos.
     
     foreach ($alumnos as $clave => $valor) {
